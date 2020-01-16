@@ -102,7 +102,11 @@ FROM data_analyst_jobs
 WHERE 
 title LIKE '%Analyst%' OR
 title LIKE '%ANALYST%' OR
-title LIKE '%analyst%'; */
+title LIKE '%analyst%'; 
+
+SELECT COUNT(DISTINCT title)
+FROM data_analyst_jobs
+WHERE LOWER(title) LIKE '%analyst%' */
 
 /* How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
 Tableau
@@ -116,6 +120,11 @@ title NOT LIKE '%ANALYST%' AND
 title NOT LIKE '%Analytics%' AND
 title NOT LIKE '%analytics%' AND
 title NOT LIKE '%ANALYTICS%'
+;
+
+SELECT DISTINCT title
+FROM data_analyst_jobs
+WHERE 
+LOWER(title) NOT LIKE '%analyst%' AND 
+LOWER(title) NOT LIKE '%analytics%'
 ; */
-
-
