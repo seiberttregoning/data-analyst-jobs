@@ -87,7 +87,7 @@ GROUP BY company
 ORDER BY avg_star_rating DESC; */
 
 /* Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
-754
+754. 774 with all case types
 
 SELECT title
 FROM data_analyst_jobs
@@ -95,7 +95,14 @@ WHERE title LIKE '%Analyst%';
 
 SELECT COUNT(DISTINCT title)
 FROM data_analyst_jobs
-WHERE title LIKE '%Analyst%'; */
+WHERE title LIKE '%Analyst%';
+
+SELECT COUNT(DISTINCT title)
+FROM data_analyst_jobs
+WHERE 
+title LIKE '%Analyst%' OR
+title LIKE '%ANALYST%' OR
+title LIKE '%analyst%'; */
 
 /* How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
 Tableau
