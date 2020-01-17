@@ -68,7 +68,14 @@ WHERE location = 'CA'; */
 SELECT company, AVG(star_rating) AS avg_star_rating
 FROM data_analyst_jobs
 GROUP BY company
-HAVING SUM(review_count) > 5000 AND company IS NOT NULL; */
+HAVING SUM(review_count) > 5000 AND company IS NOT NULL;
+
+SELECT COUNT(company)
+FROM 
+(SELECT company
+ FROM data_analyst_jobs
+GROUP BY company
+HAVING SUM(review_count) > 5000 AND company IS NOT NULL) AS subquery; */
  
 
 /* Add the code to order the query in #9 from highest to lowest average star rating. Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? What is that rating?
@@ -122,8 +129,4 @@ WHERE
 LOWER(title) NOT LIKE '%analyst%' AND 
 LOWER(title) NOT LIKE '%analytics%'
 ; 
-
-SELECT company, AVG(star_rating) AS avg_star_rating
-FROM data_analyst_jobs
-GROUP BY company
-HAVING SUM(review_count) > 5000 AND company IS NOT NULL */
+*/
