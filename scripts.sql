@@ -113,3 +113,26 @@ GROUP BY company
 HAVING SUM(review_count) > 5000 AND company IS NOT NULL
 ORDER BY avg_star_rating DESC; */
 
+/* 11.	Find all the job titles that contain the word ‘Analyst’. 
+How many different job titles are there? 
+754. 774 with all case types
+
+SELECT title
+FROM data_analyst_jobs
+WHERE title LIKE '%Analyst%';
+
+SELECT COUNT(DISTINCT title)
+FROM data_analyst_jobs
+WHERE title LIKE '%Analyst%';
+
+SELECT COUNT(DISTINCT title)
+FROM data_analyst_jobs
+WHERE 
+title LIKE '%Analyst%' OR
+title LIKE '%ANALYST%' OR
+title LIKE '%analyst%'; 
+
+SELECT COUNT(DISTINCT title)
+FROM data_analyst_jobs
+WHERE LOWER(title) LIKE '%analyst%';
+*/
