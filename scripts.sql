@@ -42,3 +42,19 @@ SELECT COUNT(title)
 FROM data_analyst_jobs
 WHERE location = 'TN' AND star_rating > 4;
 */
+
+/* 5.	How many postings in the dataset have a review count between 500 and 1000?
+151
+
+SELECT COUNT(title)
+FROM data_analyst_jobs
+WHERE review_count BETWEEN 500 AND 1000;
+*/
+
+
+
+
+
+
+
+
