@@ -26,11 +26,19 @@ TN or KY = 27
 
 SELECT COUNT (title)
 FROM data_analyst_jobs
-WHERE location = 'TN'
+WHERE location = 'TN';
 
 
 SELECT COUNT(title)
 FROM data_analyst_jobs
-WHERE location = 'TN' OR location = 'KY'
+WHERE location = 'TN' OR location = 'KY';
 */
 
+/* 4.	How many postings in Tennessee have a star rating above 4?
+3
+
+
+SELECT COUNT(title)
+FROM data_analyst_jobs
+WHERE location = 'TN' AND star_rating > 4;
+*/
