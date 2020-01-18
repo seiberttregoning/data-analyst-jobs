@@ -82,3 +82,21 @@ SELECT COUNT(DISTINCT title)
 FROM data_analyst_jobs
 WHERE location = 'CA';
 */
+
+
+/* 9.	Find the name of each company and its average star rating for all 
+companies that have more than 5000 reviews across all locations. 
+How many companies are there with more that 5000 reviews across all locations?
+70 
+
+SELECT company, AVG(star_rating) AS avg_star_rating
+FROM data_analyst_jobs
+GROUP BY company
+HAVING SUM(review_count) > 5000 AND company IS NOT NULL;
+
+SELECT COUNT(company)
+FROM 
+(SELECT company
+ FROM data_analyst_jobs
+GROUP BY company
+HAVING SUM(review_count) > 5000 AND company IS NOT NULL) AS subquery; */
