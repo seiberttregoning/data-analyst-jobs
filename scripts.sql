@@ -65,6 +65,14 @@ HAVING AVG(star_rating) IS NOT NULL
 ORDER BY avg_rating DESC;
 */
 
+/* 7.	Select unique job titles from the data_analyst_jobs table. How many are there?
+881 
 
+SELECT DISTINCT title
+FROM data_analyst_jobs;
+
+SELECT COUNT(DISTINCT title)
+FROM data_analyst_jobs;
+*/
 
 
